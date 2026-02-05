@@ -1,41 +1,41 @@
 package session09_b1;
 
 class Person {
-    protected String hoTen;
-    protected int tuoi;
+    protected String name;
+    protected int age;
 
-    public Person(String hoTen, int tuoi) {
-        this.hoTen = hoTen;
-        this.tuoi = tuoi;
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 
-    public void hienThiThongTin() {
-        System.out.println("Họ tên: " + hoTen);
-        System.out.println("Tuổi: " + tuoi);
+    public void showInfo() {
+        System.out.println("Họ tên: " + name);
+        System.out.println("Tuổi: " + age);
     }
 }
 
 class Student extends Person {
-    private String maSinhVien;
-    private double diemTrungBinh;
+    private String studentId;
+    private double avgScore;
 
-    public Student(String hoTen, int tuoi, String maSinhVien, double diemTrungBinh) {
-        super(hoTen, tuoi);
-        this.maSinhVien = maSinhVien;
-        this.diemTrungBinh = diemTrungBinh;
+    public Student(String name, int age, String studentId, double avgScore) {
+        super(name, age);
+        this.studentId = studentId;
+        this.avgScore = avgScore;
     }
 
     @Override
-    public void hienThiThongTin() {
-        super.hienThiThongTin();
-        System.out.println("Mã sinh viên: " + maSinhVien);
-        System.out.println("Điểm trung bình: " + diemTrungBinh);
+    public void showInfo() {
+        super.showInfo();
+        System.out.println("Mã sinh viên: " + studentId);
+        System.out.println("Điểm trung bình: " + avgScore);
     }
 }
 
 public class B1 {
     public static void main(String[] args) {
-        Student sv = new Student(" Bàng Trọng Tú ", 20, "SV001", 8.5);
-        sv.hienThiThongTin();
+        Student sv = new Student("Bàng Trọng Tú", 20, "SV001", 8.5);
+        sv.showInfo();
     }
 }
